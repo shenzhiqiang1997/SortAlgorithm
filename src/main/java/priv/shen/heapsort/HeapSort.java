@@ -61,6 +61,7 @@ class HeapSortTest{
         int[] numbers = new int[]{Integer.MAX_VALUE,2,5,1,3,6,4,9,7};
         HeapSort heapSort = new HeapSort();
         heapSort.sort(numbers,numbers.length-1);
+
         /* 由于堆排序后会以倒序的形式存放到数组中 所以倒序输出就是排序结果 */
         for (int i = numbers.length-1; i >=1 ; i--) {
             System.out.print(numbers[i]+((i == 1)?"":","));
