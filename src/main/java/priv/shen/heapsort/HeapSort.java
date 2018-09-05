@@ -34,10 +34,10 @@ public class HeapSort {
         numbers[0] = numbers[root];
         /* 找到左儿子的位置 */
         int k = root * 2;
-        /* 当左儿子不是叶节点时应当继续调整结构 */
-        while (k < n) {
-            /* 找到左右儿子中最小的节点 之后k指向儿子中较小的那个*/
-            if (k + 1 < n && numbers[k + 1] < numbers[k]) k++;
+        /* 当左儿子未超过堆的范围时应当继续调整结构 */
+        while (k <= n) {
+            /* 当存在右儿子时 找到左右儿子中最小的节点 之后k指向儿子中较小的那个*/
+            if (k < n && numbers[k + 1] < numbers[k]) k++;
             /* 因为是自下而上地调整
                如果根节点已经比儿子节点要小
                则说明结构已经调整好了 退出循环
