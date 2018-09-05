@@ -32,7 +32,9 @@ public class MergeSort {
         每次把两个部分中较小的元素按顺序存放到辅助数组中
         之后再移动指针继续比较 直到其中一个指针超过所在部分的尾部*/
         while (i <= mid && j <= end){
-            if (numbers[i]<numbers[j])
+            /* 这里要小于等于 原因在于
+            对于相等元素一定要让前半部分的那个元素放在前面从而保证稳定性*/
+            if (numbers[i] <= numbers[j])
                 temp[index++] = numbers[i++];
             else
                 temp[index++] = numbers[j++];
@@ -50,8 +52,7 @@ public class MergeSort {
             temp[index++] = numbers[j++];
 
         /* 将合并后的部分更新到原数组 */
-        for (int k = start; k <= end; k++)
-            numbers[k] = temp[k];
+        System.arraycopy(temp,start,numbers,start,end-start+1);
 
     }
 }
