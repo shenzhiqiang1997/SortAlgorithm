@@ -10,10 +10,10 @@ public class ShellSort {
             for (int i = 0; i < d; i++) {
                 /* 对每组进行插入排序 */
                 for (int j = i; j < numbers.length; j=j+d) {
-                    for (int k = j; k > 0; k=k-d) {
-                        if (numbers[k-1]>numbers[k]){
-                            int temp = numbers[k-1];
-                            numbers[k-1] = numbers[k];
+                    for (int k = j; k >= d; k=k-d) {
+                        if (numbers[k-d]>numbers[k]){
+                            int temp = numbers[k-d];
+                            numbers[k-d] = numbers[k];
                             numbers[k] = temp;
                         }
                     }
